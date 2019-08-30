@@ -11,6 +11,7 @@ ZK的實現完全用java實現，開發過程中不會有任何的JavaScript代�
 ZK通常會與SpringMVC做配合，讓Spring管理Model並且傳給ZK顯示，
 嚴格來說ZK就是一個支援Spring的前端框架，但是它並不適合用來做一般網頁，而是用來寫back office(後台)，
 ZK可以單獨使用，不過這裡要說明與hibernate，spring等結合構建一個完整的WEB應用。
+<br><br>
 
 ***
 ###配置
@@ -34,6 +35,7 @@ http://books.zkoss.org/zkessentials-book/master/spring_integration/configuration
 設定applicationContext.xml<br>
 這邊要載入bean，並且讓Spring可以使用Annotation的方式注入及接管Hibernate。
 
+<br><br>
 
 ***
 ###設計模式MVC與MVVM
@@ -51,6 +53,7 @@ MVVM 的 Model 跟 View 所代表的角色跟 MVC 相同， VM 代表的是 View
 View<--data binding-->ViewModel states commands---->Model
 --------------------------------------------------------------------
 
+<br><br>
 
 ***
 ###ZK的方式獲取Spring的Bean
@@ -80,12 +83,14 @@ View<--data binding-->ViewModel states commands---->Model
 
 4.@validator : 輸入驗證<br>
 驗證器綁定到元件上。
+<br><br>
 
 ***
 ###範例專案
 ***
 
 以MVVM架構實現"當日郊山活動"之 新增、查詢、修改、刪除。
+<br><br>
 
 ***
 ###參考資料
