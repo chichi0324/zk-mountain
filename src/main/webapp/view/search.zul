@@ -1,0 +1,52 @@
+<window title="搜尋當日郊山活動" width="870px" border="normal">
+	<script type="text/javascript" src="/js/scrollLocation.js" />
+	<hbox align="center">
+		關鍵字:
+		<textbox value="@save(vm.keyword)" />
+		<button label="搜尋" image="/img/search.png"
+			onClick="@command('search')" />
+		<button label="新增" visible="true"
+			onClick="@command('openAddMountainDialog')" />
+	</hbox>
+	<separator />
+	<listbox rows="3" model="@load(vm.mountainList)" emptyMessage="查無資料">
+		<listhead>
+			<listheader label="編號" width="6%" />
+			<listheader label="集合時間" width="13%" />
+			<listheader label="活動名稱" width="15%" />
+			<listheader label="集合地點" width="18%" />
+			<listheader label="類型" width="13%" />
+			<listheader label="功能" width="35%" />
+		</listhead>
+		<template name="model">
+			<listitem>
+				<listcell label="@init(each.id)"></listcell>
+				<listcell label="@init(each.m_date)"></listcell>
+				<listcell label="@init(each.name)"></listcell>
+				<listcell label="@init(each.location)"></listcell>
+				<listcell label="@init(each.type)"></listcell>
+				<listcell>
+				    <button label="明細"
+						onClick="@command('showMountainDetail', theMountain=each)" />
+					<button label="修改"
+						onClick="@command('openEditMountainDialog', theMountain=each)" />
+					<button label="刪除"
+						onClick="@command('doDeleteMountain' , mountainDetail=each)" />
+				</listcell>
+			</listitem>
+		</template>
+	</listbox>
+
+	<hlayout style="margin-top:20px" width="100%">
+		<image width="320px" src="@load(vm.selectedMountain.preview)" />
+		<vlayout hflex="2">
+			<label value="@load(vm.selectedMountain.m_date)" />
+			<label value="@load(vm.selectedMountain.name)" />
+			<label value="" height="25" />
+			<label value="@load(vm.selectedMountain.description)" />
+			<label value="" height="25" />
+			<label value="@load(vm.note)" />
+		</vlayout>
+	</hlayout>
+
+</window>

@@ -1,0 +1,9 @@
+<?page id="page1" title="" contentType="text/html;charset=UTF-8;"?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c"?>
+
+<zk xmlns:n="native">
+    <div viewModel="@id('vm') @init('com.mountain.springdemo.viewModel.MountainSearchViewModel')">
+         <include  src="@load(vm.zuPage)" />         
+    </div>
+</zk>

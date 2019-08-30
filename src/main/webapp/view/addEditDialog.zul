@@ -1,0 +1,88 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<window id="mountainAdd" xmlns:n="native" width="75%"
+	title="@load(addVm.windowTitle)" border="normal" closable="true"
+	mode="modal" position="center,top" onClose="@command('doClose')"
+	viewModel="@id('addVm') @init('com.mountain.springdemo.viewModel.MountainAddEditDialogViewModel')">
+
+	<n:table border="0" width="100%">
+		<n:tr>
+			<n:th width="15%" />
+			<n:th width="30%" />
+			<n:th width="15%" />
+			<n:th width="30%" />
+		</n:tr>
+		<n:tr height="25">
+			<n:td colspan="1" align="right">
+				<label value="編號：" />
+			</n:td>
+			<n:td colspan="1" align="left">
+				<textbox value="@load(addVm.mountain.id)"
+					disabled="true" />
+			</n:td>
+			<n:td colspan="2" align="left">
+			    <!-- "新增'資料測試用 -->
+				<button label="測試資料帶入" onClick="@command('doTest')" visible="@load(addVm.addOrEdit eq 'add')"/>
+			</n:td>
+		</n:tr>
+		<n:tr height="10" />
+		<n:tr height="25">
+			<n:td align="right">
+				<label style="font-weight: bold;color: red;" value="*" />
+				<label value="集合時間：" />
+			</n:td>
+			<n:td colspan="1" align="left">
+				<datebox id="db4" cols="12"
+					value="@bind(addVm.mountain.m_date)" format="long+medium"
+					onCreate="self.value = new Date()" width="230px" />
+			</n:td>
+			<n:td align="right">
+				<label style="font-weight: bold;color: red;" value="*" />
+				<label value="活動名稱：" />
+			</n:td>
+			<n:td align="left">
+				<textbox value="@bind(addVm.mountain.name)"
+					disabled="false" maxlength="11"/>
+			</n:td>
+		</n:tr>
+		<n:tr height="10" />
+		<n:tr height="25">
+			<n:td align="right">
+				<label style="font-weight: bold;color: red;" value="*" />
+				<label value="集合地點：" />
+			</n:td>
+			<n:td colspan="1" align="left">
+				<textbox value="@bind(addVm.mountain.location)"
+					disabled="false" maxlength="15"/>
+			</n:td>
+			<n:td align="right">
+				<label value="類型：" />
+			</n:td>
+			<n:td align="left">
+				<combobox id="cmbColor"
+					model="@load(addVm.mountainTypes)"
+					selectedItem="@bind(addVm.mountain.type)" />
+			</n:td>
+		</n:tr>
+		<n:tr height="10" />
+		<n:tr height="25">
+			<n:td colspan="1" align="right">
+				<label value="介紹：" />
+			</n:td>
+			<n:td colspan="3" align="left">
+				<textbox value="@bind(addVm.mountain.description)"
+					disabled="false" width="90%" maxlength="300" />
+			</n:td>
+		</n:tr>
+		<n:tr height="25" />
+		<n:tr>
+			<n:td colspan="4" align="center">
+				<div style="text-align:center;">
+					<button label="存擋" onClick="@command('preCheck')" />
+				</div>
+			</n:td>
+		</n:tr>
+	</n:table>
+
+
+</window>

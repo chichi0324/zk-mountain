@@ -1,0 +1,8 @@
+<zk>
+<window border="normal" title="ZK Demo - 登山活動列表">
+	<vlayout>
+
+		<a href="view/mountain-Mvvm.zul">mountain-Mvvm.zul</a>
+	</vlayout>
+</window>
+</zk>
