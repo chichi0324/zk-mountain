@@ -64,6 +64,7 @@ View<--data binding-->ViewModel states commands---->Model
 如此一來才能夠使用ZK既有的注入方式注入Bean。
 
 2.使用@wirevariable取代Spring的@Autowire
+<br><br>
 
 ***
 ###ViewModel data binding 語法
