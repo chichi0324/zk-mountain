@@ -44,13 +44,13 @@ http://books.zkoss.org/zkessentials-book/master/spring_integration/configuration
 MVC 其實是個通用的軟體模式詞彙，泛指一般把系統分成模型（Model）, 視圖（View）, 控制器（Controller）三部分的架構。ZK 借用這個詞來指稱「直接透過元件 API 來控制元件」的設計模式。
 
 --------------------------------------------------------------------
-View<--component API--Controller components event listeners---->Model
+`View<--component API--Controller components event listeners---->Model`
 --------------------------------------------------------------------
 
 MVVM 的 Model 跟 View 所代表的角色跟 MVC 相同， VM 代表的是 ViewModel，其實是另一種形式的控制器角色，只是這個模式下，你不需呼叫元件的 API 來控制畫面，而是「透過資料繫結 (data binding) 來控制元件」。
 
 --------------------------------------------------------------------
-View<--data binding-->ViewModel states commands---->Model
+`View<--data binding-->ViewModel states commands---->Model`
 --------------------------------------------------------------------
 
 <br><br>
