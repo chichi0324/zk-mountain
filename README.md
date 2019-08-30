@@ -1,7 +1,7 @@
 # ZK+Spring+Hibernate+Maven整合
 
 ***
-##說明
+說明
 ***
 
 ZK 是一個基於 Java EE 與 AJAX 的使用者介面框架 (UI framework)，它提供上百個元件讓你打造快速反應的網頁應用程式 (web application)的介面。
@@ -13,12 +13,12 @@ ZK通常會與SpringMVC做配合，讓Spring管理Model並且傳給ZK顯示，
 ZK可以單獨使用，不過這裡要說明與hibernate，spring等結合構建一個完整的WEB應用。
 
 ***
-###配置
+配置
 ***
 
 根據文件，ZK有自有的注入方式，這裡說明以Spring為主的注入方式。
 
-1.Maven配置pom.xml
+1.Maven配置pom.xml <br>
 範例專案：
 zk          8.5.0-Eval
 Spring      5.0.6.RELEASE
@@ -36,24 +36,24 @@ http://books.zkoss.org/zkessentials-book/master/spring_integration/configuration
 
 
 ***
-###設計模式MVC與MVVM
+設計模式MVC與MVVM
 ***
 
 MVC 其實是個通用的軟體模式詞彙，泛指一般把系統分成模型（Model）, 視圖（View）, 控制器（Controller）三部分的架構。ZK 借用這個詞來指稱「直接透過元件 API 來控制元件」的設計模式。
 
 --------------------------------------------------------------------
-View<--component API--Controller components event listeners---->Model
+##View<--component API--Controller components event listeners---->Model
 --------------------------------------------------------------------
 
 MVVM 的 Model 跟 View 所代表的角色跟 MVC 相同， VM 代表的是 ViewModel，其實是另一種形式的控制器角色，只是這個模式下，你不需呼叫元件的 API 來控制畫面，而是「透過資料繫結 (data binding) 來控制元件」。
 
 --------------------------------------------------------------------
-View<--data binding-->ViewModel states commands---->Model
+##View<--data binding-->ViewModel states commands---->Model
 --------------------------------------------------------------------
 
 
 ***
-###ZK的方式獲取Spring的Bean
+ZK的方式獲取Spring的Bean
 ***
 
 1.ZK本身支援MVC或者MVVM，但是在注入上只限制Composer或者ViewModel才能注入Bean。
@@ -63,7 +63,7 @@ View<--data binding-->ViewModel states commands---->Model
 2.使用@wirevariable取代Spring的@Autowire
 
 ***
-###ViewModel data binding 語法
+ViewModel data binding 語法
 ***
 
 1.載入資料語法
@@ -82,13 +82,13 @@ View<--data binding-->ViewModel states commands---->Model
 驗證器綁定到元件上。
 
 ***
-###範例專案
+範例專案
 ***
 
 以MVVM架構實現"當日郊山活動"之 新增、查詢、修改、刪除。
 
 ***
-###參考資料
+參考資料
 ***
 
 1.zk
