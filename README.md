@@ -1,3 +1,19 @@
+# ZK-mountain
+
+***
+##step by step
+***
+
+1.Eclipse Marketplace-->ZK studio install<br>
+2.eclipse -->import Existing Maven Project<br>
+3.generate sql script to database<br>
+(mountain_table_script.sql)<br>
+4.modify properties<br>
+(jdbc.properties)<br>
+5.run server<br>
+6.http://localhost:8080/zk-mountain/<br>
+<br>
+
 # ZK+Spring+Hibernate+Maven整合
 
 ***
