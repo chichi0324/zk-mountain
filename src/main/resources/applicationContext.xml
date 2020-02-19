@@ -19,6 +19,8 @@
 	<context:component-scan base-package="com.mountain.springdemo" />
 
 	<!-- Add support for conversion, formatting and validation support -->
+	<!-- Spring就知道了我們啟用註解驅動。然後Spring通過context:component-scan/標籤的配置，
+	會自動為我們將掃描到的 @Component，@Controller，@Service，@Repository等註解標記的元件註冊到工廠中，來處理我們的請求。 -->
 	<mvc:annotation-driven />
 
 
@@ -57,6 +59,7 @@
 	</bean>
 
 	<!-- Step 4: Enable configuration of transactional behavior based on annotations -->
+	<!-- enables scanning for @Transactional annotations -->
 	<tx:annotation-driven transaction-manager="myTransactionManager" />
 
 	<!-- Add support for reading web resources: css, images, js, etc ... -->
